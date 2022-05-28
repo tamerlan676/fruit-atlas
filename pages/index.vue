@@ -5,6 +5,7 @@
     <WorkScheme />
     <MobileMenu @turnMenu="turnMenu" />
     <Products :products="posts" @addToCart="addToCart" />
+    <DeliveryPay />
     <Cart :val="isActive" :products="cart"  @plusOne="plusOne"  
     :totalPrice="this.cart.map(item => item.acf.item_price_count).reduce(function(sum, current) { return sum + current }, 0)" @minusOne="minusOne" @deleteElement="deleteElement" @turnCart="turnCart" />
   </div>
@@ -17,10 +18,11 @@ import MobileMenu from '~/components/MobileMenu.vue';
 import Products from '~/components/Products.vue';
 import Cart from '~/components/Cart.vue';
 import WorkScheme from '~/components/WorkScheme.vue';
+import DeliveryPay from '~/components/DeliveryPay.vue';
 
 export default {
     name: 'IndexPage',
-    components: { HeaderPanel, HeroBlock, MobileMenu, Products, Cart, WorkScheme },
+    components: { HeaderPanel, HeroBlock, MobileMenu, Products, Cart, WorkScheme, DeliveryPay },
     async asyncData({ $axios }) {
       const posts = await $axios.$get('https://ne404.ru/admin/wp-json/?rest_route=/wp/v2/posts/')
       return { posts }

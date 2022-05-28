@@ -37,6 +37,9 @@ header{
 	justify-content: space-between;
   box-sizing: border-box;
   width: 100%;
+  position: sticky;
+  top: 0;
+  background: #fff;
 }
 .burger{
 	position: relative;
@@ -94,7 +97,7 @@ header{
 
 @media (min-width : 1200px) {
 	header, .scheme, .products, .delivery{
-		width: 1140px;
+		width: 100%;
 		margin: 0 auto;
 	}
 

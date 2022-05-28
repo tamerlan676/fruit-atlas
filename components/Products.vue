@@ -105,6 +105,20 @@ export default {
 .price span{
 	color: #1AC034
 }
+.add-to-cart{
+  background: #FF7C00;
+  color: #fff;
+  border: none;
+  width: 100%;
+  padding: 10px;
+  font-family: inherit;
+  text-transform: uppercase;
+  border-radius: 10px;
+  font-weight: bold;
+}
+.add-to-cart:hover{
+  background: #f39944;
+}
 @media (min-width : 1024px) {
   .products{
     width: 900px;
