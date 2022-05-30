@@ -3,7 +3,7 @@
     <div class="steps-wrapper">
       <div class="step">
       <img src="~/assets/call.svg" alt="">
-      <div class="text">Принимаем заказ с сайт, по телефону или по WhatsApp</div>
+      <div class="text">Принимаем заказ с сайта, по телефону или по WhatsApp</div>
     </div>
     <div class="step">
       <img src="~/assets/basket.svg" alt="">
@@ -41,14 +41,14 @@ export default {
 	text-align: center;
 }
 .step{
-	background: #FF7C00;
+	background: #EAEAEA;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	padding: 16px 10px;
 	border-radius: 10px;
 	line-height: 20px;
-	color: #fff;
+	color: #000;
 	margin-bottom: 8px;
 }
 .step img{

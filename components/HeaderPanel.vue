@@ -13,6 +13,9 @@
     </div>
     <div class="cart" @click='$emit("turnCart")'>
       <img src="~assets/cart.svg" alt="">
+      <transition name="bounce">
+        <div v-if="count" class="count">{{ count }}</div>
+      </transition>
     </div>
  </header>
 </template>
@@ -20,6 +23,11 @@
 <script>
 export default {
   name: 'HeaderPanel',
+  props: {
+    count: {
+      type: Number
+    }
+  },
   data () {
     return{
       active: false
@@ -75,6 +83,44 @@ header{
 	width: 100%;
 	height: 2px;
 	background: #FF7C00;
+}
+.cart{
+  position: relative;
+}
+.count{
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  justify-content: center;
+  right: -5px;
+  top: 3px;
+  background: rgba(243,153,68,.7);
+  color: #000;
+  border-radius: 100%;
+  font-size: 14px;
+  font-weight: 600;
+}
+.bounce-enter-active {
+  animation: bounce-in .8s ease-out both;
+}
+
+.bounce-leave-active {
+  animation: bounce-in .8s reverse ease-in both;
+}
+
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.8);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 @media (min-width : 992px) {
   .navigation{

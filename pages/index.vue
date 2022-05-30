@@ -1,6 +1,6 @@
 <template>
   <div>
-    <HeaderPanel @turnCart="turnCart" />
+    <HeaderPanel @turnCart="turnCart" :count="cart.length" />
     <HeroBlock />
     <WorkScheme />
     <MobileMenu @turnMenu="turnMenu" />
@@ -30,7 +30,7 @@ export default {
     data() {
       return{
         isActive: false,
-        cart: [],
+        cart: []
       }
     },
     head: {
@@ -61,7 +61,7 @@ export default {
           }
          }
         else{
-          this.cart.push(value)
+          this.cart.push(value);
         }        
         // localStorage.setItem("cart", JSON.stringify(this.cart));
       },

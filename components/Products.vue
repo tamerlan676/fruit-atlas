@@ -14,7 +14,7 @@
         <div class="country">Страна: <b>{{ item.acf.countrycountry }}</b></div>
         <div class="min">Минимальный заказ <b>{{ item.acf.min }}{{ item.acf.count_name }}</b></div>
         <div class="price"><span>~</span> <b>{{ item.acf.price }} руб.</b></div>
-        <button class="add-to-cart" @click='$emit("addToCart", item)'>в корзину</button>
+        <button class="add-to-cart" :class="{green: green}" @click='$emit("addToCart", item)'>в корзину</button>
         </div>
       </div>
     </div>
@@ -27,6 +27,9 @@ export default {
   props: {
     products: {
       type: Array
+    },
+    green: {
+      type: Boolean
     }
   },
   data() {
@@ -115,9 +118,10 @@ export default {
   text-transform: uppercase;
   border-radius: 10px;
   font-weight: bold;
+  transition: all .3s ease;
 }
-.add-to-cart:hover{
-  background: #f39944;
+.add-to-cart:active{
+  background: rgb(81, 131, 81);
 }
 @media (min-width : 1024px) {
   .products{

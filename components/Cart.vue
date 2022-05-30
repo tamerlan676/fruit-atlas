@@ -5,6 +5,10 @@
         <h3>Ваш заказ</h3>
         <img @click='$emit("turnCart")' src="~/assets/close.svg" alt="">
       </header>
+      <div class="empty_cart" v-if="products.length === 0">
+        Ваша корзина пока пуста
+        <img src="~/assets/empty.svg" alt="">
+      </div>
       <section class="list">
         <div v-for="(item, id) in products" :key="id" class="item">
           <img class="foto" :src="item.better_featured_image.source_url">
@@ -23,13 +27,14 @@
           </div>
         </div>
       </section>
-      <footer>
+      <footer v-if="products.length > 0">
         <div class="total-price">Итоговая цена: {{ totalPrice }} руб</div>
+        <div class="total-price">Минимальный заказ 5000руб</div>
         <button>Оформить заказ</button>
       </footer>
     </div>
 </template>
-
+a
 <script>
 export default {
   name: 'CartComponent',
@@ -69,6 +74,8 @@ export default {
   flex-direction: column;
   justify-content: space-between;
   transition: all 0.5s ease;
+  border-radius: 20px 20px 0 0;
+  box-shadow: 1px -1px 4px rgba(0, 0, 0, 0.25);
 }
 .active{
   bottom: 0;
@@ -123,7 +130,19 @@ header{
   border-radius: 100%;
   width: 25px;
   height: 25px;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.empty_cart{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .del img{
@@ -146,6 +165,7 @@ footer button{
   padding: 15px 10px;
   font-weight: bold;
   font-size: 17px;
+  border-radius: 10px;
 }
 @media (min-width : 992px) {
   .cart{
