@@ -135,6 +135,8 @@ header{
   justify-content: center;
   font-weight: bold;
   font-size: 14px;
+  cursor: pointer;
+  color: #000
 }
 
 .empty_cart{
@@ -176,6 +178,7 @@ footer button{
     height: 100%;
     padding: 24px 16px;
     border-radius: 0;
+    z-index: 110;
   }
   .active{
     right: 0;
