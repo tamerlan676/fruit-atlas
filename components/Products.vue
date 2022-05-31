@@ -77,7 +77,6 @@ export default {
 }
 h2{
   text-align: center;
-  margin-bottom: 24px;
 }
 .categories{
   display: flex;
@@ -140,8 +139,9 @@ h2{
   border-radius: 10px;
   font-weight: bold;
   transition: all .3s ease;
+  cursor: pointer
 }
-.add-to-cart:active{
+.add-to-cart:focus{
   background: rgb(81, 131, 81);
 }
 @media (min-width : 1024px) {

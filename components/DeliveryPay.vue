@@ -1,10 +1,10 @@
 <template>
-<section class="delivery"><h2>Доставка и оплата</h2>
+<section class="delivery"><h2>Почему мы?</h2>
 	<div class="delivery-wrapper">
-		<img src="~/assets/girl.jpg" alt=""><ul>
-		<li> <img class="arrow" width="11px" height="20px" src="~/assets/arrow.svg" alt=""> <div>Цены в каталоге могут отличаться от акутальных цен, так как цена на фрукты и овощи меняется в день по несколько раз</div></li>
-		<li> <img class="arrow" width="11px" height="20px" src="~/assets/arrow.svg" alt=""> <div>Оплатить заказ вы можете любым удобным для вас способом. (карта, наличные, перевод)</div></li>
-		<li> <img class="arrow" width="11px" height="20px" src="~/assets/arrow.svg" alt=""> <div>Доставка по Москве от заказа на 5000 рублей<br> Привезем в любое удобное для вас время.</div></li></ul>
+	<ul>
+		<li> <img class="arrow" width="11px" height="20px" src="~/assets/arrow.svg" alt=""> <div>Мы - команда имеющая 10-летний опыт во фруктово-овощном бизнесне. Мы занимаемся импортом продуктов с Европы, Африки, Азии и Америки.</div></li>
+		<li> <img class="arrow" width="11px" height="20px" src="~/assets/arrow.svg" alt=""> <div>Каждый заказа мы собираем как для себя, поэтому готовы вернуть деньги, если качество вас не устроит.</div></li>
+		<li> <img class="arrow" width="11px" height="20px" src="~/assets/arrow.svg" alt=""> <div>Стараемся выстроить с клиентами не только рыночные, но и дружеские отношения для дальнейшего сотрудничества.</div></li></ul>
 	</div>
  </section>
 </template>
@@ -54,12 +54,18 @@ ul li div{
 		margin: 0 auto;
 		display: block;
 	}
+	ul li div{
+		width: 600px;
+	}
 }
 @media (min-width : 1200px) {
 	.delivery-wrapper{
 		display: flex;
 		align-items: center;
 		width: 1140px;
+		margin: 0 auto;
+	}
+	ul{
 		margin: 0 auto;
 	}
 	.girl{

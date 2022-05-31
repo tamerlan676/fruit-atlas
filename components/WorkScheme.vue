@@ -1,24 +1,28 @@
 <template>
-<section class="scheme"><h2>Схема работы</h2>
-    <div class="steps-wrapper">
-      <div class="step">
-      <img src="~/assets/call.svg" alt="">
-      <div class="text">Принимаем заказ с сайта, по телефону или по WhatsApp</div>
-    </div>
-    <div class="step">
-      <img src="~/assets/basket.svg" alt="">
-      <div class="text">Собираем корзину, отбирая все самое свежее</div>
-    </div>
-    <div class="step">
-      <img src="~/assets/check.svg" alt="">
-      <div class="text">Сообщаем вам детали и актуальную цену заказа</div>
-    </div>
-    <div class="step">
-      <img src="~/assets/point.svg" alt="">
-      <div class="text">Доставляем заказ в пределах МКАД в течении 2 часов</div>
-    </div>
-    </div>
- </section>
+<div>
+	<p class="hello-text">Интернет-магазин fruit-atlas - это быстрая доставка ваших любимых фруктов и овощей по Москве и МО. <br>
+	Заказывайте с удовольствием домой, в офис или на дачу.</p>
+	<section class="scheme"><h2>Схема работы</h2>
+		<div class="steps-wrapper">
+		<div class="step">
+		<img src="~/assets/call.svg" alt="">
+		<div class="text">Принимаем заказ с сайта, по телефону или по WhatsApp</div>
+		</div>
+		<div class="step">
+		<img src="~/assets/basket.svg" alt="">
+		<div class="text">Собираем корзину, отбирая все самое свежее</div>
+		</div>
+		<div class="step">
+		<img src="~/assets/check.svg" alt="">
+		<div class="text">Сообщаем вам детали заказа и уточняем удобное время доставки</div>
+		</div>
+		<div class="step">
+		<img src="~/assets/point.svg" alt="">
+		<div class="text">Доставляем заказ в пределах МКАД в течении 2 часов</div>
+		</div>
+		</div>
+	</section>
+ </div>
 </template>
 
 <script>
@@ -34,7 +38,11 @@ export default {
 
 <style scoped>
 .scheme{
-	padding: 50px 16px 0 16px;
+	padding: 24px 16px 0 16px;
+}
+.hello-text{
+	text-align: center;
+	padding: 24px 16px;
 }
 .scheme h2{
 	margin-bottom: 16px;

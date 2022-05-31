@@ -48,6 +48,7 @@ header{
   position: sticky;
   top: 0;
   background: #fff;
+  z-index: 100;
 }
 .burger{
 	position: relative;
@@ -86,6 +87,7 @@ header{
 }
 .cart{
   position: relative;
+  cursor: pointer;
 }
 .count{
   position: absolute;
