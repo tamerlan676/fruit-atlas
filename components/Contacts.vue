@@ -35,6 +35,8 @@ export default {
 .contacts{
   width: 100%;
   padding: 24px 0;
+  border-top: 4px solid #eaeaea;
+  border-bottom: 4px solid #eaeaea;
 }
 .map{
   width: 100%;
