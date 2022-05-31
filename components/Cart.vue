@@ -175,6 +175,7 @@ footer button{
     top: 0;
     height: 100%;
     padding: 24px 16px;
+    border-radius: 0;
   }
   .active{
     right: 0;

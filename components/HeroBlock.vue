@@ -16,7 +16,8 @@
   .hero{
 	width: 100%;
 	height: 470px;
-	background-image: url(../assets/hero.png);
+	background-image: url(../assets/hero.jpg);
+	background-position: center;
 	background-size: cover;
 	display: flex;
 	flex-direction: column;
@@ -55,6 +56,7 @@
   .hero{
     align-items: center;
     padding: 0 16px;
+	background-image: url(../assets/hero.jpg);
   }
 }
 @media (min-width : 1200px) {

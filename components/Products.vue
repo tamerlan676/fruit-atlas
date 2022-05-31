@@ -1,23 +1,39 @@
 <!-- Please remove this file from your project -->
 <template>
   <div class="products">
-    <h3>Каталог</h3>
-    <ul class="categories">
-      <li v-for="(cat, key) in categories" :key="key" @click="sortBy(cat)">{{ cat }}</li>
-    </ul>
-    <div class="products-wrapper">
-      <div v-for="(item, key) in result" :key="key" class="item">
-        <div class="image">
-        <img :src="item.better_featured_image.source_url">
-        </div>
-        <div class="desc"><h3>{{ item.title.rendered }}</h3>
-        <div class="country">Страна: <b>{{ item.acf.countrycountry }}</b></div>
-        <div class="min">Минимальный заказ <b>{{ item.acf.min }}{{ item.acf.count_name }}</b></div>
-        <div class="price"><span>~</span> <b>{{ item.acf.price }} руб.</b></div>
-        <button class="add-to-cart" :class="{green: green}" @click='$emit("addToCart", item)'>в корзину</button>
+    <h2>Каталог</h2>
+    <section class="by_category">
+      <h3>Популярные фрукты</h3>
+      <div class="products-wrapper">
+        <div v-for="(item, key) in products.filter(item => item.acf.category === 'Фрукты')" :key="key" class="item">
+          <div class="image">
+          <img :src="item.better_featured_image.source_url">
+          </div>
+          <div class="desc"><h3>{{ item.title.rendered }}</h3>
+          <div class="country">Страна: <b>{{ item.acf.countrycountry }}</b></div>
+          <div class="min">Минимальный заказ <b>{{ item.acf.min }}{{ item.acf.count_name }}</b></div>
+          <div class="price"><span>~</span> <b>{{ item.acf.price }} руб.</b></div>
+          <button class="add-to-cart" :class="{green: green}" @click='$emit("addToCart", item)'>в корзину</button>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
+     <section class="by_category">
+      <h3>Популярные овощи</h3>
+      <div class="products-wrapper">
+        <div v-for="(item, key) in products.filter(item => item.acf.category === 'Овощи')" :key="key" class="item">
+          <div class="image">
+          <img :src="item.better_featured_image.source_url">
+          </div>
+          <div class="desc"><h3>{{ item.title.rendered }}</h3>
+          <div class="country">Страна: <b>{{ item.acf.countrycountry }}</b></div>
+          <div class="min">Минимальный заказ <b>{{ item.acf.min }}{{ item.acf.count_name }}</b></div>
+          <div class="price"><span>~</span> <b>{{ item.acf.price }} руб.</b></div>
+          <button class="add-to-cart" :class="{green: green}" @click='$emit("addToCart", item)'>в корзину</button>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -39,13 +55,7 @@ export default {
         'Фрукты', 'Овощи'
       ]
     }
-  },
-  methods: {
-    sortBy(val = 'Фрукты'){
-      if(val === 'Фрукты') { this.result = this.products.filter(item => item.acf.category === 'Фрукты') }
-      if(val === 'Овощи') { this.result = this.products.filter(item => item.acf.category === 'Овощи') }
-      }
-    }
+  }
   }
 </script>
 
@@ -55,8 +65,19 @@ export default {
 	overflow: auto;
 }
 
+.by_category{
+  padding: 20px 0;
+}
+.by_category h3{
+  margin-bottom: 16px;
+}
+
 .products{
   padding: 16px 0 0 16px;
+}
+h2{
+  text-align: center;
+  margin-bottom: 24px;
 }
 .categories{
   display: flex;
@@ -132,5 +153,10 @@ export default {
 		flex-wrap: wrap;
 
 	}
+}
+@media (min-width : 1024px) {
+  .products{
+    width: 1140px;
+  }
 }
 </style>

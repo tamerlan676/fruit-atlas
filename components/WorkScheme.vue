@@ -15,7 +15,7 @@
     </div>
     <div class="step">
       <img src="~/assets/point.svg" alt="">
-      <div class="text">Доставляем ваш заказ прямо до двери вашего дома</div>
+      <div class="text">Доставляем заказ в пределах МКАД в течении 2 часов</div>
     </div>
     </div>
  </section>
