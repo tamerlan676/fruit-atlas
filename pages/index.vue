@@ -26,7 +26,7 @@ export default {
     name: 'IndexPage',
     components: { HeaderPanel, HeroBlock, MobileMenu, Products, Cart, WorkScheme, DeliveryPay, Contacts },
     async asyncData({ $axios }) {
-      const posts = await $axios.$get('https://ne404.ru/admin/wp-json/?rest_route=/wp/v2/posts/')
+      const posts = await $axios.$get('https://fruit-atlas.ru/admin/wp-json/wp/v2/posts?_embed&per_page=100')
       return { posts }
     },
     data() {

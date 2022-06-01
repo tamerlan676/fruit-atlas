@@ -34,6 +34,38 @@
         </div>
       </div>
     </section>
+    <section class="by_category">
+    <h3>Популярные цитрусы</h3>
+    <div class="products-wrapper">
+      <div v-for="(item, key) in products.filter(item => item.acf.category === 'Цитрусы')" :key="key" class="item">
+        <div class="image">
+        <img :src="item.better_featured_image.source_url">
+        </div>
+        <div class="desc"><h3>{{ item.title.rendered }}</h3>
+        <div class="country">Страна: <b>{{ item.acf.countrycountry }}</b></div>
+        <div class="min">Минимальный заказ <b>{{ item.acf.min }}{{ item.acf.count_name }}</b></div>
+        <div class="price"><span>~</span> <b>{{ item.acf.price }} руб.</b></div>
+        <button class="add-to-cart" :class="{green: green}" @click='$emit("addToCart", item)'>в корзину</button>
+        </div>
+      </div>
+    </div>
+  </section>
+     <section class="by_category">
+      <h3>Популярные ягоды</h3>
+      <div class="products-wrapper">
+        <div v-for="(item, key) in products.filter(item => item.acf.category === 'Ягоды')" :key="key" class="item">
+          <div class="image">
+          <img :src="item.better_featured_image.source_url">
+          </div>
+          <div class="desc"><h3>{{ item.title.rendered }}</h3>
+          <div class="country">Страна: <b>{{ item.acf.countrycountry }}</b></div>
+          <div class="min">Минимальный заказ <b>{{ item.acf.min }}{{ item.acf.count_name }}</b></div>
+          <div class="price"><span>~</span> <b>{{ item.acf.price }} руб.</b></div>
+          <button class="add-to-cart" :class="{green: green}" @click='$emit("addToCart", item)'>в корзину</button>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -147,16 +179,20 @@ h2{
 @media (min-width : 1024px) {
   .products{
     width: 900px;
-    margin: 0 auto;
+    margin: 32px auto;
   }
 	.products-wrapper{
 		flex-wrap: wrap;
-
+    justify-content: flex-start;
 	}
+  .item{
+    margin-bottom: 24px;
+    margin-right: 24px;
+  }
 }
 @media (min-width : 1024px) {
   .products{
-    width: 1140px;
+    width: 1100px;
   }
 }
 </style>
