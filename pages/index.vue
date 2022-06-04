@@ -7,8 +7,9 @@
     <Products :products="posts" @addToCart="addToCart" />
     <DeliveryPay />
     <Contacts />
-    <Cart :val="isActive" :products="cart"  @plusOne="plusOne"  
-    :totalPrice="this.cart.map(item => item.acf.item_price_count).reduce(function(sum, current) { return sum + current }, 0)" @minusOne="minusOne" @deleteElement="deleteElement" @turnCart="turnCart" />
+    <Cart :val="isActive" :products="cart" @plusOne="plusOne"
+    :totalPrice="this.cart.map(item => item.acf.item_price_count).reduce(function(sum, current) { return sum + current }, 0)" @minusOne="minusOne" @callForm="callForm"  @deleteElement="deleteElement" @turnCart="turnCart" />
+    <Form @callForm="callForm" :val="formActive" />
   </div>
 </template>
 
@@ -21,10 +22,11 @@ import Cart from '~/components/Cart.vue';
 import WorkScheme from '~/components/WorkScheme.vue';
 import DeliveryPay from '~/components/DeliveryPay.vue';
 import Contacts from '~/components/Contacts.vue';
+import Form from '~/components/Form.vue';
 
 export default {
     name: 'IndexPage',
-    components: { HeaderPanel, HeroBlock, MobileMenu, Products, Cart, WorkScheme, DeliveryPay, Contacts },
+    components: { HeaderPanel, HeroBlock, MobileMenu, Products, Cart, WorkScheme, DeliveryPay, Contacts, Form },
     async asyncData({ $axios }) {
       const posts = await $axios.$get('https://fruit-atlas.ru/admin/wp-json/wp/v2/posts?_embed&per_page=100')
       return { posts }
@@ -32,6 +34,7 @@ export default {
     data() {
       return{
         isActive: false,
+        formActive: false,
         cart: []
       }
     },
@@ -43,8 +46,13 @@ export default {
       turnMenu () {
         this.isActive = !this.isActive
       },
+      callForm () {
+        this.formActive = !this.formActive
+        console.log('form')
+      },
       turnCart () {
         this.isActive = !this.isActive
+        console.log('turn cart')
         if(this.isActive === true){
           document.body.style.overflow = 'hidden'
         }
@@ -55,8 +63,7 @@ export default {
           let isExists = false
           this.cart.map(function(item) { 
             if( item.id === value.id) { 
-              isExists = true
-              console.log('Уже в корзине')}
+              isExists = true }
             return item })
           if (!isExists) {
             this.cart.push(value)
@@ -75,7 +82,7 @@ export default {
         }  
       },
       plusOne (value) {
-        value.acf.min = value.acf.min + 1
+        value.acf.itemCount = value.acf.itemCount + 1
         value.acf.item_price_count = value.acf.item_price_count + value.acf.price
         this.totalPrice = this.cart.map(item => item.acf.price).reduce(function(sum, current) { return sum + current }, 0)
       },

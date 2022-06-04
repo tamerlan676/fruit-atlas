@@ -3,7 +3,7 @@
   <div class="cart" :class="{active: val}">
       <header>
         <h3>Ваш заказ</h3>
-        <img @click='$emit("turnCart")' src="~/assets/close.svg" alt="">
+        <img @click='$emit("turnCart")' src="~/assets/close.svg">
       </header>
       <div class="empty_cart" v-if="products.length === 0">
         Ваша корзина пока пуста
@@ -18,7 +18,7 @@
           </div>
           <div class="calc">
             <button @click='$emit("minusOne", item)'>-</button>
-            <input v-model="item.acf.min"/>
+            <input v-model="item.acf.itemCount"/>
             <button @click='$emit("plusOne", item)'>+</button>
           </div>
           <div class="price">{{ item.acf.item_price_count }}руб</div>
@@ -30,11 +30,10 @@
       <footer v-if="products.length > 0">
         <div class="total-price">Итоговая цена: {{ totalPrice }} руб</div>
         <div class="total-price">Минимальный заказ 5000руб</div>
-        <button>Оформить заказ</button>
+        <button @click='$emit("callForm")'>Оформить заказ</button>
       </footer>
     </div>
 </template>
-a
 <script>
 export default {
   name: 'CartComponent',
@@ -56,7 +55,9 @@ export default {
       newCount: 1,
   }},
   methods: {
-
+    callForm() {
+      console.log('form')
+    }
     }
   }
 </script>
@@ -76,6 +77,7 @@ export default {
   transition: all 0.5s ease;
   border-radius: 20px 20px 0 0;
   box-shadow: 1px -1px 4px rgba(0, 0, 0, 0.25);
+  z-index: 11;
 }
 .active{
   bottom: 0;
@@ -84,6 +86,9 @@ header{
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+header img{
+  cursor: pointer
 }
 .list{
   height: 450px;
@@ -168,6 +173,7 @@ footer button{
   font-weight: bold;
   font-size: 17px;
   border-radius: 10px;
+  cursor: pointer
 }
 @media (min-width : 992px) {
   .cart{
