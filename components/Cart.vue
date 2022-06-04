@@ -69,7 +69,7 @@ export default {
   position: fixed;
   bottom:-100%;
   height: 70vh;
-  padding: 8px;
+  padding: 8px 16px 50px 16px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;

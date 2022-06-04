@@ -3,7 +3,7 @@
   <div class="form" :class="{active: val}">
       <header>
         <h3>Форма отправки</h3>
-        <img @click='$emit("callForm")' src="~/assets/close.svg" alt="">
+        <img @click='$emit("callForm")' src="~/assets/back.svg" alt="">
       </header>
       <form action="">
       <section>

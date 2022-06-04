@@ -76,7 +76,7 @@ export default {
       },
       minusOne (value) {
         if(value.acf.min > 1){
-          value.acf.min = value.acf.min - 1
+          value.acf.itemCount = value.acf.itemCount - 1
           value.acf.item_price_count = value.acf.item_price_count - value.acf.price
           this.totalPrice = this.cart.map(item => item.acf.price).reduce(function(sum, current) { return sum + current }, 0)
         }  

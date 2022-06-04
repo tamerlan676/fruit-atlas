@@ -42,9 +42,6 @@ ul li{
 	align-items: center;
 	justify-content: center;
 }
-ul li div{
-	width: 260px;
-}
 .arrow{
 	margin-right: 16px;
 }
