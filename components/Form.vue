@@ -73,7 +73,7 @@ input{
   box-sizing: border-box;
   padding-left: 12px;
   font-family: inherit;
-  font-size: 14px;
+  font-size: 16px;
 }
 .input{
   margin-bottom: 24px;
@@ -90,7 +90,7 @@ textarea{
   box-sizing: border-box;
   padding-left: 12px;
   font-family: inherit;
-  font-size: 14px;
+  font-size: 16px;
   padding-top: 12px;
 }
 header img{
