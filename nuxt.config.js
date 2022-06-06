@@ -36,14 +36,14 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
-    '@nuxtjs/yandex-metrika',
-      {
-        id: '89035039',
-        webvisor: true,
-      }
+      [
+        '@nuxtjs/yandex-metrika',
+        {
+          id: '89035039',
+          webvisor: true
+        }
+      ]
     ],
-
-  // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
     baseURL: '/',
