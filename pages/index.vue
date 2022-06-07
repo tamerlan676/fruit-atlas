@@ -9,7 +9,7 @@
     <Contacts />
     <Cart :val="isActive" :products="cart" @plusOne="plusOne"
     :totalPrice="this.cart.map(item => item.acf.item_price_count).reduce(function(sum, current) { return sum + current }, 0)" @minusOne="minusOne" @callForm="callForm"  @deleteElement="deleteElement" @turnCart="turnCart" />
-    <Form @callForm="callForm" :val="formActive" />
+    <Form @callForm="callForm" :val="formActive" :cart="cart" />
   </div>
 </template>
 

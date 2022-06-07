@@ -9,20 +9,21 @@
       <section>
         <div class="input">
           <label for="Как вас зовут?">Как вас зовут?</label>
-          <input type="text" placeholder="Денис, Мария">
+          <input required v-model="name" type="text" placeholder="Денис, Мария" >
         </div>
         <div class="input">
           <label for="Как вас зовут?">Ваш Телефон</label>
-          <input type="text" placeholder="7(999) 999-99-99">
+          <input required v-model="phone" type="text"  placeholder="7(999) 999-99-99">
         </div>
         <div class="input">
           <label for="Как вас зовут?">По какому адресу доставить?</label>
-          <textarea placeholder="Москва, ул Пушкинаб 17 кв 99"></textarea>
+          <textarea required v-model="adress" placeholder="Москва, ул Пушкинаб 17 кв 99"></textarea>
         </div>
       </section>
       <footer>
         <button type="submit">Отправить</button>
       </footer>
+      {{ order }}
       </form>
     </div>
 </template>
@@ -33,15 +34,38 @@ export default {
   props: {
       val: {
         type: Boolean
+      },
+      cart: {
+        type: Array
       }
+  },
+  data () {
+    return {
+      name: '',
+      phone: '',
+      adress: '',
+      order: '',
+    }
   },
   methods: {
     submit() {
+        const list = this.cart.map((item, index) =>  (index + 1) + ' ' + item.title.rendered + ' - ' + item.acf.itemCount + ' ' + item.acf.item_price_count )
+        const totalPrice = this.cart.map(item => item.acf.item_price_count).reduce(function(sum, current) { return sum + current }, 0)
+        const enter = '\n'
+        const order = {
+          name: this.name,
+          phone: this.phone,
+          adress: this.adress,
+          products: list.join().replace(/,/g, enter )
+        }
+        const message = `<strong>${order.name}</strong> заказал(а) 
+        <pre>${order.products}</pre> \n на сумму: ${totalPrice} руб \n Тел: <strong><a href="tel:+${order.phone}">${order.phone}</a></strong> \n Адрес: <i>${order.adress}</i>` 
+        console.log(list)
         axios.post(`https://api.telegram.org/bot5561581589:AAHOqK8z6VzxVouFK0m-pC9u-HruGIPALfs/sendMessage`, {
           chat_id: '-1001187047227',
           parse_mode: 'html',
-          message: 'Test message'
-        })
+          text: message
+        }).then(location.href = '/success')
     }
   }
 }
