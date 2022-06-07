@@ -5,7 +5,7 @@
         <h3>Форма отправки</h3>
         <img @click='$emit("callForm")' src="~/assets/back.svg" alt="">
       </header>
-      <form action="">
+      <form @submit.prevent="submit" action="">
       <section>
         <div class="input">
           <label for="Как вас зовут?">Как вас зовут?</label>
@@ -21,18 +21,28 @@
         </div>
       </section>
       <footer>
-        <button>Отправить</button>
+        <button type="submit">Отправить</button>
       </footer>
       </form>
     </div>
 </template>
 <script>
+import axios from 'axios'
 export default {
   name: 'FormComponent',
   props: {
       val: {
         type: Boolean
       }
+  },
+  methods: {
+    submit() {
+        axios.post(`https://api.telegram.org/bot5561581589:AAHOqK8z6VzxVouFK0m-pC9u-HruGIPALfs/sendMessage`, {
+          chat_id: '-1001187047227',
+          parse_mode: 'html',
+          message: 'Test message'
+        })
+    }
   }
 }
 </script>
