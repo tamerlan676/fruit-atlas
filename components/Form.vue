@@ -58,14 +58,12 @@ export default {
           adress: this.adress,
           products: list.join().replace(/,/g, enter )
         }
-        const message = `<strong>${order.name}</strong> заказал(а) 
-        <pre>${order.products}</pre> \n на сумму: ${totalPrice} руб \n Тел: <strong><a href="tel:+${order.phone}">${order.phone}</a></strong> \n Адрес: <i>${order.adress}</i>` 
-        console.log(list)
+        const message = `<strong>${order.name}</strong> заказал(а) \n <pre>${order.products}</pre> \n на сумму: ${totalPrice} руб \n Тел: <strong><a href="tel:+${order.phone}">${order.phone}</a></strong> \n Адрес: <i>${order.adress}</i>` 
         axios.post(`https://api.telegram.org/bot5561581589:AAHOqK8z6VzxVouFK0m-pC9u-HruGIPALfs/sendMessage`, {
           chat_id: '-1001187047227',
           parse_mode: 'html',
           text: message
-        }).then(location.href = '/success')
+        }).then()
     }
   }
 }
