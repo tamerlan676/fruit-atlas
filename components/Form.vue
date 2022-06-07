@@ -63,7 +63,12 @@ export default {
           chat_id: '-1001187047227',
           parse_mode: 'html',
           text: message
-        }).then()
+        }).then(
+          function changeLocation() {
+            location.href='/success'
+          },
+          setTimeout(this.changeLocation, 10000)
+        )
     }
   }
 }

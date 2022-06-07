@@ -33,9 +33,11 @@ h1, p, body {
     flex-direction: column;
     height: 100vh;
 	font-family: 'Roboto', sans-serif;
+    text-align: center;
 }
 h1{
     margin-bottom: 24px;
+    color: #1AC034
 }
 p{
     margin-bottom: 16px;
