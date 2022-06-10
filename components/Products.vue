@@ -2,7 +2,7 @@
 <template>
   <div class="products">
     <h2>Каталог</h2>
-    <section class="by_category">
+    <section id="fruits" class="by_category">
       <h3>Популярные фрукты</h3>
       <div class="products-wrapper">
         <div v-for="(item, key) in products.filter(item => item.acf.category === 'Фрукты')" :key="key" class="item">
@@ -18,7 +18,7 @@
         </div>
       </div>
     </section>
-     <section class="by_category">
+     <section id="veg" class="by_category">
       <h3>Популярные овощи</h3>
       <div class="products-wrapper">
         <div v-for="(item, key) in products.filter(item => item.acf.category === 'Овощи')" :key="key" class="item">
@@ -34,7 +34,7 @@
         </div>
       </div>
     </section>
-    <section class="by_category">
+    <section id="citrus" class="by_category">
     <h3>Популярные цитрусы</h3>
     <div class="products-wrapper">
       <div v-for="(item, key) in products.filter(item => item.acf.category === 'Цитрусы')" :key="key" class="item">
@@ -50,7 +50,7 @@
       </div>
     </div>
   </section>
-  <section class="by_category">
+  <section id="berries" class="by_category">
   <h3>Популярные ягоды</h3>
   <div class="products-wrapper">
     <div v-for="(item, key) in products.filter(item => item.acf.category === 'Ягоды')" :key="key" class="item">
@@ -66,7 +66,7 @@
     </div>
   </div>
 </section>
-<section class="by_category">
+<section id="grass" class="by_category">
 <h3>Зелень и микрозелень</h3>
 <div class="products-wrapper">
   <div v-for="(item, key) in products.filter(item => item.acf.category === 'Зелень')" :key="key" class="item">

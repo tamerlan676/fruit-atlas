@@ -81,7 +81,7 @@ export default {
   position: fixed;
   bottom:-100%;
   height: 70vh;
-  padding: 8px;
+  padding: 16px;
   box-sizing: border-box;
   transition: all 0.5s ease;
   border-radius: 20px 20px 0 0;
@@ -145,7 +145,6 @@ header img{
 
 footer{
   background: #fff;
-  padding-top: 30px;
 }
 
 footer button{

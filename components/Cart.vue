@@ -18,7 +18,7 @@
           </div>
           <div class="calc">
             <button @click='$emit("minusOne", item)'>-</button>
-            <input v-model="item.acf.itemCount"/>
+            <input disabled v-model="item.acf.itemCount"/>
             <button @click='$emit("plusOne", item)'>+</button>
           </div>
           <div class="price">{{ item.acf.item_price_count }}руб</div>
@@ -29,7 +29,7 @@
       </section>
       <footer v-if="products.length > 0">
         <div class="total-price">Итоговая цена: {{ totalPrice }} руб</div>
-        <div class="total-price">Минимальный заказ 5000руб</div>
+        <div class="total-price">Оплата при получении</div>
         <button @click='$emit("callForm")'>Оформить заказ</button>
       </footer>
     </div>
@@ -53,12 +53,7 @@ export default {
   data() {
     return {
       newCount: 1,
-  }},
-  methods: {
-    callForm() {
-      console.log('form')
-    }
-    }
+  }}
   }
 </script>
 
@@ -133,8 +128,8 @@ header img{
   background: orange;
   border: none;
   border-radius: 100%;
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -173,6 +168,7 @@ footer button{
   font-weight: bold;
   font-size: 17px;
   border-radius: 10px;
+  margin-top: 8px;
   cursor: pointer
 }
 @media (min-width : 992px) {

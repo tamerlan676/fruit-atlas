@@ -1,8 +1,9 @@
 <template>
   <section class="hero">
     <h1>ОТБОРНЫЕ ФРУКТЫ И ОВОЩИ ВСЕГО МИРА У ВАШЕЙ ДВЕРИ</h1>
-    <a href="tel:+79188208097">позвонить</a>
-    <a target="_blank" href="https://api.whatsapp.com/send/?phone=79188208097&text=Здравствуйте%2C+хочу+заказать+доставку">заказать в watsapp</a>
+	<p class="desc">Заказажи сейчас и получи бесплатную доставку и экзотический фрукт в подарок!</p>
+    <a class="call_to_action" href="tel:+79188208097">позвонить</a>
+    <a class="call_to_action" target="_blank" href="https://api.whatsapp.com/send/?phone=79188208097&text=Здравствуйте%2C+хочу+заказать+доставку">заказать в watsapp</a>
  </section>
 </template>
 
@@ -52,12 +53,16 @@
 	background: transparent;
 	margin-bottom: 0;
 }
+.desc{
+	display: none;
+}
 @media (min-width : 992px) {
   .hero{
     align-items: center;
     padding: 0 16px;
 	background-image: url(../assets/hero.jpg);
   }
+  
 }
 @media (min-width : 1200px) {
 	.hero{
@@ -66,7 +71,17 @@
 	.hero h1{
 		font-size: 30px;
 		width: 500px;
-		line-height: 32px;
+		line-height: 42px;
+	}
+	.hero a{
+		display: none;
+	}
+	.desc{
+		display: block;
+		text-align: center;
+		color: #fff;
+		width: 6	00px;
+		font-size: 18px;
 	}
 }
 </style>

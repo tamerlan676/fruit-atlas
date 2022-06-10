@@ -75,10 +75,10 @@ export default {
         // localStorage.setItem("cart", JSON.stringify(this.cart));
       },
       minusOne (value) {
-        if(value.acf.min > 1){
+        if(value.acf.itemCount > 1){
           value.acf.itemCount = value.acf.itemCount - 1
           value.acf.item_price_count = value.acf.item_price_count - value.acf.price
-          this.totalPrice = this.cart.map(item => item.acf.price).reduce(function(sum, current) { return sum + current }, 0)
+          this.totalPrice = this.cart.map(item => item.acf.price).reduce(function(sum, current) { return sum - current }, 0)
         }  
       },
       plusOne (value) {

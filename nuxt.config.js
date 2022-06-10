@@ -54,5 +54,16 @@ export default {
   dev: process.env.NODE_ENV !== 'production',
   generate: {
     routes: ['/', '/success']
+  },
+  router: {
+    scrollBehavior(to) {
+      if (to.hash) {
+        return window.scrollTo({
+          top: document.querySelector(to.hash).offsetTop + window.innerHeight - 1000,
+          behavior: 'smooth'
+        })
+      }
+      return window.scrollTo({ behavior: 'smooth' })
+    }
   }
 }
