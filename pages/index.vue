@@ -5,6 +5,9 @@
     <WorkScheme />
     <MobileMenu @turnMenu="turnMenu" />
     <Products :products="posts" @addToCart="addToCart" />
+    <section class="not-found">
+      <div class="text">Не нашли то, что искали? Не беда, мы найдем. <br> Просто свяжитесь с нами.</div>
+    </section>
     <DeliveryPay />
     <Contacts />
     <Cart :val="isActive" :products="cart" @plusOne="plusOne"
@@ -140,6 +143,17 @@ li a{
   -moz-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
   -ms-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
   animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+}
+.not-found{
+  padding: 16px;
+  text-align: center;
+}
+
+.not-found-text{
+  width: 100%;
+  padding: 10px;
+  background: #EAEAEA;
+  text-align: center;
 }
 @media (min-width : 992px) {
   .float{

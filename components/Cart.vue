@@ -29,7 +29,7 @@
       </section>
       <footer v-if="products.length > 0">
         <div class="total-price">Итоговая цена: {{ totalPrice }} руб</div>
-        <div class="total-price">Оплата при получении</div>
+        <div class="del-info">Оплата при получении. Цену и время доставки сообщим по телефону.</div>
         <button @click='$emit("callForm")'>Оформить заказ</button>
       </footer>
     </div>
@@ -112,6 +112,10 @@ header img{
 .calc{
   display: flex;
   justify-content: space-between;
+}
+.del-info{
+  font-size: 14px;
+  color: rgb(139, 138, 138)
 }
 
 .calc input{
