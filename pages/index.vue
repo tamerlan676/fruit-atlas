@@ -10,6 +10,9 @@
     <Cart :val="isActive" :products="cart" @plusOne="plusOne"
     :totalPrice="this.cart.map(item => item.acf.item_price_count).reduce(function(sum, current) { return sum + current }, 0)" @minusOne="minusOne" @callForm="callForm"  @deleteElement="deleteElement" @turnCart="turnCart" />
     <Form @callForm="callForm" :val="formActive" :cart="cart" />
+    <div class="float">
+       <a class="call_to_action" target="_blank" href="https://api.whatsapp.com/send/?phone=79188208097&text=Здравствуйте%2C+хочу+заказать+доставку"><img width="60px" height="60px" src="~/assets/whats.svg"></a>
+    </div>
   </div>
 </template>
 
@@ -119,4 +122,32 @@ li a{
   text-decoration: none;
   color: #FF7C00;
 }
+.float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  border: none;
+  right: 20px;
+  bottom: 50px;
+  box-shadow: 0 0 0 0 rgba(40, 150, 36, 0.7);
+  border-radius: 50%;
+  background-color: #25D366;
+  background-size:111%;
+  background-position:-5px -5px;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  -webkit-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  -moz-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  -ms-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+}
+@media (min-width : 992px) {
+  .float{
+    display: none;
+  }
+}
+@-webkit-keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
+@-moz-keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
+@-ms-keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
+      @keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
 </style>
