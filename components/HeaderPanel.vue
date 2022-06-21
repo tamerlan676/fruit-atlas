@@ -7,7 +7,7 @@
         <nuxt-link :to="{ path: '/',hash:'#veg'}">Овощи</nuxt-link>
         <nuxt-link :to="{ path: '/',hash:'#citrus'}">Цитрусы</nuxt-link>
         <nuxt-link :to="{ path: '/',hash:'#berries'}">Ягоды</nuxt-link>
-        <nuxt-link :to="{ path: '/',hash:'#grass'}">Зелень</nuxt-link>
+        <!-- <nuxt-link :to="{ path: '/',hash:'#grass'}">Зелень</nuxt-link> -->
       </ul>
     <div class="burger">
     <span></span>

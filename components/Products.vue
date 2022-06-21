@@ -66,7 +66,7 @@
     </div>
   </div>
 </section>
-<section id="grass" class="by_category">
+<!-- <section id="grass" class="by_category">
 <h3>Зелень и микрозелень</h3>
 <div class="products-wrapper">
   <div v-for="(item, key) in products.filter(item => item.acf.category === 'Зелень')" :key="key" class="item">
@@ -81,7 +81,7 @@
     </div>
   </div>
 </div>
-</section>
+</section> -->
   </div>
 </template>
 
