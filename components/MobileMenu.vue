@@ -1,15 +1,12 @@
 <!-- Please remove this file from your project -->
 <template>
   <div class="mobile-menu" :class="{active: val}">
-    <div class="close-icon" @click='$emit("turnMenu")'>
-      <img src="~/assets/close.svg">
-    </div>
-    <ul>
-        <li><nuxt-link to="#">О компании</nuxt-link></li>
-        <li><nuxt-link to="#">О компании</nuxt-link></li>
-        <li><nuxt-link to="#">О компании</nuxt-link></li>
-        <li><nuxt-link to="#">О компании</nuxt-link></li>
-        <li><nuxt-link to="#">О компании</nuxt-link></li>
+    <ul class="navigation">
+        <nuxt-link :to="{ path: '/',hash:'#fruits'}"> <img src="~/assets/fruits.svg" alt=""> Фрукты</nuxt-link>
+        <nuxt-link :to="{ path: '/',hash:'#veg'}"><img src="~/assets/vegetables.svg" alt="">Овощи</nuxt-link>
+        <nuxt-link :to="{ path: '/',hash:'#citrus'}"><img src="~/assets/citruss.svg" alt="">Цитрусы</nuxt-link>
+        <nuxt-link :to="{ path: '/',hash:'#berries'}"> <img src="~/assets/berries.svg">Ягоды</nuxt-link>
+        <nuxt-link :to="{ path: '/',hash:'#grass'}"><img src="~/assets/grass.svg">Зелень</nuxt-link>
     </ul>
   </div>
 </template>
@@ -27,27 +24,33 @@ export default {
 
 <style scoped>
 .mobile-menu{
-  position: fixed;
-  right: -100%;
-  width: 60%;
-  padding: 10px 20px;
-  z-index: 1;
-  top: 0;
-  height: 100vh;
+  position: sticky;
+  top: 63px;
+  padding-top: 16px;
   background: #fff;
-  transition: all .5s ease ;
 }
-.mobile-menu li{
-  margin-bottom: 16px;
-  font-size: 18px;
-}
-.close-icon{
+.navigation{
   display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
-.active{
-  right: 0;
+.navigation a{
+  flex: 0 1 auto;
+  background: #e5e5e5;
+  color: #FF7C00;
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  text-decoration: none;
+  border-radius: 10px;
+}
+@media (min-width : 992px) {
+  .mobile-menu{
+    display: none;
+  }
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <section class="hero">
     <h1>ОТБОРНЫЕ ФРУКТЫ И ОВОЩИ ВСЕГО МИРА У ВАШЕЙ ДВЕРИ</h1>
-	<p class="desc">Заказажи сейчас и получи бесплатную доставку и экзотический фрукт в подарок!</p>
+	<p class="desc">Заказажи сейчас и получи экзотический фрукт в подарок!</p>
     <a class="call_to_action" href="tel:+79188208097">позвонить</a>
     <a class="call_to_action" target="_blank" href="https://api.whatsapp.com/send/?phone=79188208097&text=Здравствуйте%2C+хочу+заказать+доставку">заказать в watsapp</a>
  </section>

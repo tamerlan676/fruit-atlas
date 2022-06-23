@@ -3,11 +3,11 @@
   <header>
     <img src="~assets/logo.svg" alt="Фрут Атлас">
       <ul class="navigation">
-        <nuxt-link :to="{ path: '/',hash:'#fruits'}">Фрукты</nuxt-link>
-        <nuxt-link :to="{ path: '/',hash:'#veg'}">Овощи</nuxt-link>
-        <nuxt-link :to="{ path: '/',hash:'#citrus'}">Цитрусы</nuxt-link>
-        <nuxt-link :to="{ path: '/',hash:'#berries'}">Ягоды</nuxt-link>
-        <!-- <nuxt-link :to="{ path: '/',hash:'#grass'}">Зелень</nuxt-link> -->
+        <nuxt-link :to="{ path: '/',hash:'#fruits'}"> <img src="~/assets/fruits.svg" alt=""> Фрукты</nuxt-link>
+        <nuxt-link :to="{ path: '/',hash:'#veg'}"><img src="~/assets/vegetables.svg" alt="">Овощи</nuxt-link>
+        <nuxt-link :to="{ path: '/',hash:'#citrus'}"><img src="~/assets/citruss.svg" alt="">Цитрусы</nuxt-link>
+        <nuxt-link :to="{ path: '/',hash:'#berries'}"> <img src="~/assets/berries.svg">Ягоды</nuxt-link>
+        <nuxt-link :to="{ path: '/',hash:'#grass'}"><img src="~/assets/grass.svg">Зелень</nuxt-link>
       </ul>
     <div class="burger">
     <span></span>
@@ -60,6 +60,11 @@ header{
 }
 .navigation{
   display: none;
+}
+.navigation a{
+  display: flex;
+  align-items: center;
+  font-weight: 600;
 }
 .burger:before{
 	position: absolute;
@@ -128,7 +133,7 @@ header{
 @media (min-width : 992px) {
   .navigation{
     display: flex;
-    width: 500px;
+    width: 600px;
     justify-content: space-between;
   }
   .navigation a{

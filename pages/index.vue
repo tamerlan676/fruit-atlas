@@ -2,8 +2,8 @@
   <div>
     <HeaderPanel @turnCart="turnCart" :count="cart.length" />
     <HeroBlock />
+    <MobileMenu />
     <WorkScheme />
-    <MobileMenu @turnMenu="turnMenu" />
     <Products :products="posts" @addToCart="addToCart" />
     <section class="not-found">
       <div class="text">Не нашли то, что искали? Не беда, мы найдем. <br> Просто свяжитесь с нами.</div>
@@ -156,9 +156,7 @@ li a{
   text-align: center;
 }
 @media (min-width : 992px) {
-  .float{
-    display: none;
-  }
+
 }
 @-webkit-keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
 @-moz-keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
