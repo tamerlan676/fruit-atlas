@@ -1,6 +1,6 @@
 <!-- Please remove this file from your project -->
 <template>
-  <div class="contacts">
+  <div id="contacts" class="contacts">
     <div class="map">
       <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ab3d762716a0237eecc4c9df9f97f757463a39c5155531dbf89da834b1708f588&amp;width=100%&amp;height=400&amp;lang=ru_RU&amp;scroll=false"></script>
     </div>
@@ -42,6 +42,17 @@ export default {
   width: 100%;
   height: 400px;
   overflow: hidden;
+  position: relative;
+}
+.map:before{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background:transparent;
+  z-index: 2;
 }
 .info{
   padding: 16px;
